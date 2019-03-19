@@ -1,8 +1,6 @@
-exports.question = function(query, options) {
-  /* eslint-disable key-spacing */
-  return getValidLine(margeOptions(margeOptions(true, options), {
-    display:            query
-  }));
-  /* eslint-enable key-spacing */
-};
+import readlineSync from 'readline-sync';
 
+export const askName = () => {
+	const askUserName = readlineSync.question("May I have your name?");
+	console.log('Hi, ' + askUserName +'!');
+};
