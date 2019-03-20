@@ -3,8 +3,8 @@
 language: node_js
 
 node_js:
-	- node
+  - node
 
 script:
-	- make lint
-	- make test
+  - make lint
+  - make test
