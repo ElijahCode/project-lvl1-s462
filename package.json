@@ -19,8 +19,12 @@
   "author": "Ilya Starikov",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "readline-sync": "^1.4.9"
-},
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
