@@ -1,10 +1,11 @@
 {
   "name": "39k3mcei3",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "Set of games for your brain)",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -23,6 +24,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.3",
     "eslint-plugin-import": "^2.16.0",
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
