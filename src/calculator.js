@@ -10,7 +10,6 @@ const getRandomOperand = (num1, num2) => {
   const border1 = 33;
   const border2 = 66;
   const deter = getRandomNumber(mindet, maxdet);
-  console.log(deter);
   if (deter < border1) {
     return cons(`${num1} + ${num2}`, num1 + num2);
   }
