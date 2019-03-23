@@ -3,7 +3,7 @@ import {
 } from 'hexlet-pairs';
 import getRandomNumber from '../numberGenerator';
 
-const numbIsEven = (numb) => {
+const numbIsPrime = (numb) => {
   const iter = (number, acc) => {
     if (number === acc) {
       return true;
@@ -21,7 +21,7 @@ const max = 22;
 
 const game = () => {
   const randomNumb = getRandomNumber(min, max);
-  const answer = numbIsEven(randomNumb);
+  const answer = numbIsPrime(randomNumb);
   const result = (answer === true) ? 'yes' : 'no';
   return cons(randomNumb, result);
 };
