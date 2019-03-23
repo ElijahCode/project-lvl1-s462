@@ -3,37 +3,26 @@ import {
 } from 'hexlet-pairs';
 import getRandomNumber from '../numberGenerator';
 
-const massiveOfOperand = {
-  plus: '+',
-  minus: '-',
-  multiplication: '*',
-};
+const operands = '+-*';
 
-const mindet = 1; // getRandomOperand can return it
-const maxdet = 4; // getRandomOperand never return it, watch doc for Math.Rand;
-const variantForPlus = 1;
-const variantForMinus = 2;
+const firstIndexOfString = 0; // getRandomOperand can return it
+const lastIndexofString = 3; // getRandomOperand never return it, watch doc for Math.Rand;
 
 const getRandomOperand = () => {
-  const determinant = getRandomNumber(mindet, maxdet);
-  switch (determinant) {
-    case variantForPlus:
-      return massiveOfOperand.plus;
-    case variantForMinus:
-      return massiveOfOperand.minus;
-    default:
-      return massiveOfOperand.multiplication;
-  }
+  const stringIndex = getRandomNumber(firstIndexOfString, lastIndexofString);
+  const operand = operands[stringIndex];
+  return operand;
 };
 
 const getResult = (num1, num2, operand) => {
-  if (operand === '+') {
-    return num1 + num2;
+  switch (operand) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 * num2;
   }
-  if (operand === '-') {
-    return num1 - num2;
-  }
-  return num1 * num2;
 };
 
 const min = 0;
@@ -46,7 +35,8 @@ const calc = () => {
   const randomOperand = getRandomOperand();
 
   const result = getResult(number1, number2, randomOperand);
-  return cons(`${number1} ${randomOperand} ${number2}`, result);
+  const expression = `${number1} ${randomOperand} ${number2}`;
+  return cons(expression, result);
 };
 
 export default calc;

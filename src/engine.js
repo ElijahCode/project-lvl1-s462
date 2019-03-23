@@ -3,7 +3,7 @@ import {
   car, cdr,
 } from 'hexlet-pairs';
 import calc from './games/calculator';
-import evenOrNot from './games/evenOrNot';
+import evenOrNot from './games/even';
 import gcd from './games/gcd';
 import progression from './games/progression';
 
