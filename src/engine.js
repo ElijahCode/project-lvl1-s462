@@ -6,6 +6,7 @@ import calc from './games/calculator';
 import evenOrNot from './games/even';
 import gcd from './games/gcd';
 import progression from './games/progression';
+import prime from './games/prime';
 
 const getGame = (nameOfGame) => {
   switch (nameOfGame) {
@@ -17,6 +18,8 @@ const getGame = (nameOfGame) => {
       return gcd();
     case 'progression':
       return progression();
+    case 'prime':
+      return prime();
     default:
       return undefined;
   }
@@ -35,6 +38,9 @@ const printRules = (nameOfGame) => {
       break;
     case 'progression':
       console.log('What number is missing in the progression?');
+      break;
+    case 'prime':
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
     default:
       console.log('Error!Game not founded.');
