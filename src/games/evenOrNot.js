@@ -4,17 +4,22 @@ import {
 } from 'hexlet-pairs';
 import getRandomNumber from '../numberGenerator';
 
-const itIsEven = (num) => {
-  const itIsEvenAnswer = (num % 2 === 0) ? 'yes' : 'no';
-  return itIsEvenAnswer;
+const getResult = (predi) => {
+  const result = (predi === true) ? 'yes' : 'no';
+  return result;
 };
 
+const isEven = (num) => {
+  const itIsEvenAnswer = (num % 2 === 0);
+  return getResult(itIsEvenAnswer);
+};
+
+const min = 1;
+const max = 100;
+
 const game = () => {
-  const min = 1;
-  const max = 100;
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  const numberForQustion = getRandomNumber(min, max);
-  const answer = readlineSync.question(`QUESTION: ${numberForQustion}`);
-  return cons(answer, itIsEven(numberForQustion));
+  const result = getRandomNumber(min, max);
+  const answer = readlineSync.question(`QUESTION: ${result}`);
+  return cons(answer, isEven(result));
 };
 export default game;

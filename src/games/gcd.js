@@ -4,19 +4,21 @@ import {
 } from 'hexlet-pairs';
 import getRandomNumber from '../numberGenerator';
 
+const findDivisor = (divisor, num1, num2) => {
+  if (num1 % divisor === 0 && num2 % divisor === 0) {
+    return divisor;
+  }
+  return findDivisor(divisor - 1, num1, num2);
+};
+
+const min = 0;
+const max = 100;
+
 const getGCD = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  const min = 0;
-  const max = 100;
   const number1 = getRandomNumber(min, max);
   const number2 = getRandomNumber(min, max);
-  const answer = readlineSync.question(`Question: ${number1} ${number2}`);
-  const iter = (div) => {
-    if (number1 % div === 0 && number2 % div === 0) {
-      return cons(Number(answer), div);
-    }
-    return iter(div - 1);
-  };
-  return iter(((number1 > number2) ? number2 : number1));
+  const answer = Number(readlineSync.question(`Question: ${number1} ${number2}`));
+  const div = findDivisor((number1 > number2) ? number2 : number1, number1, number2);
+  return cons(answer, div);
 };
 export default getGCD;
