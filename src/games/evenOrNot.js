@@ -2,8 +2,7 @@ import readlineSync from 'readline-sync';
 import {
   cons,
 } from 'hexlet-pairs';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import getRandomNumber from '../numberGenerator';
 
 const itIsEven = (num) => {
   const itIsEvenAnswer = (num % 2 === 0) ? 'yes' : 'no';

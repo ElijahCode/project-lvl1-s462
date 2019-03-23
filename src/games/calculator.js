@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 import {
   cons, car, cdr,
 } from 'hexlet-pairs';
+import getRandomNumber from '../numberGenerator';
 
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const getRandomOperand = (num1, num2) => {
   const mindet = 1;
   const maxdet = 4;
