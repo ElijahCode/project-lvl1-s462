@@ -1,6 +1,6 @@
 {
   "name": "39k3mcei3",
-  "version": "0.4.3",
+  "version": "0.5.3",
   "description": "Set of games for your brain)",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
