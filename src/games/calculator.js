@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
 import {
-  cons, /* car, cdr, */
+  cons,
 } from 'hexlet-pairs';
 import getRandomNumber from '../numberGenerator';
 
@@ -46,9 +45,8 @@ const calc = () => {
 
   const randomOperand = getRandomOperand();
 
-  const answer = Number(readlineSync.question(`Question: ${number1} ${randomOperand} ${number2}`));
   const result = getResult(number1, number2, randomOperand);
-  return cons(answer, result);
+  return cons(`${number1} ${randomOperand} ${number2}`, result);
 };
 
 export default calc;

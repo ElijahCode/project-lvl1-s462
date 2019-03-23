@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   cons,
 } from 'hexlet-pairs';
@@ -19,7 +18,6 @@ const max = 100;
 
 const game = () => {
   const result = getRandomNumber(min, max);
-  const answer = readlineSync.question(`QUESTION: ${result}`);
-  return cons(answer, isEven(result));
+  return cons(result, isEven(result));
 };
 export default game;

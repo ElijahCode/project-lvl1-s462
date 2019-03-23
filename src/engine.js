@@ -5,6 +5,7 @@ import {
 import calc from './games/calculator';
 import evenOrNot from './games/evenOrNot';
 import gcd from './games/gcd';
+import progression from './games/progression';
 
 const getGame = (nameOfGame) => {
   switch (nameOfGame) {
@@ -14,6 +15,8 @@ const getGame = (nameOfGame) => {
       return evenOrNot();
     case 'gcd':
       return gcd();
+    case 'progression':
+      return progression();
     default:
       return undefined;
   }
@@ -30,6 +33,9 @@ const printRules = (nameOfGame) => {
     case 'gcd':
       console.log('Find the greatest common divisor of given numbers.');
       break;
+    case 'progression':
+      console.log('What number is missing in the progression?');
+      break;
     default:
       console.log('Error!Game not founded.');
   }
@@ -44,10 +50,11 @@ const engine = (gameName) => {
   printRules(gameName);
   for (let i = 0; i < numberOfRounds; i += 1) {
     const result = getGame(gameName);
-    if (car(result) === cdr(result)) {
+    const answer = readlineSync.question(`QUESTION:${car(result)} `);
+    if (String(cdr(result)) === answer) {
       console.log('Correct!');
     } else {
-      console.log(`"${car(result)}" is wrong answer ;(. Correct answer was "${cdr(result)}".`);
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${cdr(result)}".`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }

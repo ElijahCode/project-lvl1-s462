@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   cons,
 } from 'hexlet-pairs';
@@ -17,8 +16,7 @@ const max = 100;
 const getGCD = () => {
   const number1 = getRandomNumber(min, max);
   const number2 = getRandomNumber(min, max);
-  const answer = Number(readlineSync.question(`Question: ${number1} ${number2}`));
   const div = findDivisor((number1 > number2) ? number2 : number1, number1, number2);
-  return cons(answer, div);
+  return cons(`${number1} ${number2}`, div);
 };
 export default getGCD;
