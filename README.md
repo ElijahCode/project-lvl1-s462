@@ -1,4 +1,4 @@
-#39k3mcei3 (Brain Games)
+#39k3mcei3 (Brain Games)#
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d613e1da60450d2fc47a/maintainability)](https://codeclimate.com/github/ElijahCode/project-lvl1-s462/maintainability)
 
@@ -17,7 +17,7 @@ For launch game go to directory in which you installed the Brain Games and enter
 
 ./nodes-modules/39k3mcei3/dist/brain-games.js
 
-##Description of games
+##Description of games##
 
 *Even or not?*
 
