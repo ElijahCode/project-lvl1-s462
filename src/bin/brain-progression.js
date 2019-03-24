@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import engine from '../engine';
+import progression from '../games/progression';
 
-engine('progression');
+progression();

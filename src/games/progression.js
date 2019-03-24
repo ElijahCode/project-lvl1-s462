@@ -1,40 +1,36 @@
 import {
-  cons, car, cdr,
+  cons,
 } from 'hexlet-pairs';
 import getRandomNumber from '../utils';
+import engine from '../engine';
 
-const gameRules = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
-const min = 0;
-const maxSize = 10;
-
-const hideANumber = (mass) => {
-  const elseMass = mass.slice(0);
-  const changeMemb = getRandomNumber(min, maxSize);
-  elseMass[changeMemb] = '..';
-  return cons(changeMemb, elseMass);
-};
+const firstMemberIndex = 0;
+const length = 10;
 
 const minFirstMember = 0;
 const maxFirstMember = 30;
 const minDiff = 0;
 const maxDiff = 30;
 
-
-const getResult = () => {
+const getQuestionAndAnswer = () => {
   const firstMember = getRandomNumber(minFirstMember, maxFirstMember);
   const diff = getRandomNumber(minDiff, maxDiff);
   const members = [];
-  for (let i = 0; i < maxSize; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     members[i] = firstMember + i * diff;
   }
-  const changedMembAndNewMass = hideANumber(members);
+  const hiddenNumber = getRandomNumber(firstMemberIndex, length);
+  const answer = String(members[hiddenNumber]);
 
-  const result = members[car(changedMembAndNewMass)];
-  const question = cdr(changedMembAndNewMass).join(' ');
+  members[hiddenNumber] = '..';
 
-  const finalResult = cons(question, result);
-  return cons(finalResult, gameRules);
+  const question = members.join(' ');
+
+  const questionAndAnswer = cons(question, answer);
+  return questionAndAnswer;
 };
 
-export default getResult;
+const runGame = () => engine(getQuestionAndAnswer, gameDescription);
+export default runGame;

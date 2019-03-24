@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import engine from '../engine';
+import prime from '../games/prime';
 
-engine('prime');
+prime();

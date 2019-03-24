@@ -4,16 +4,20 @@ import {
 } from 'hexlet-pairs';
 
 const numberOfRounds = 3;
-const engine = (gameName, userName) => {
-  const rules = cdr(gameName());
-  console.log(rules);
+const engine = (gameName, gameDescription) => {
+  console.log('Welocome to the Brain Games!');
+
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hi, ${userName}!`);
+
+  console.log(gameDescription);
 
   for (let i = 0; i < numberOfRounds; i += 1) {
     const result = gameName();
-    const transmittedQuestion = car(car(result));
-    const correctAnswer = String(cdr((car(result))));
-    const answer = readlineSync.question(`Question: ${transmittedQuestion} `);
-    if (String(correctAnswer) === answer) {
+    const question = car(result);
+    const correctAnswer = cdr(result);
+    const answer = readlineSync.question(`Question: ${question} `);
+    if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);

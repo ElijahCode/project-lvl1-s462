@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import menu from '../menu';
+import askName from '..';
 
-menu();
+askName();
