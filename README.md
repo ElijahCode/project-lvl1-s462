@@ -15,7 +15,7 @@ sudo npm install 39k3mcei3
 
 For launch game go to directory in which you installed the Brain Games and enter next command in your terminal:
 
-./nodes-packages/39k3mcei3/dist/brain-games.js
+./nodes-modules/39k3mcei3/dist/brain-games.js
 
 ##Description of games
 
