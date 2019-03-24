@@ -15,18 +15,18 @@ const hideANumber = (mass) => {
   return cons(changeMemb, elseMass);
 };
 
-const minA1 = 0;
-const maxA1 = 30;
-const minD = 0;
-const maxD = 30;
+const minFirstMember = 0;
+const maxFirstMember = 30;
+const minDiff = 0;
+const maxDiff = 30;
 
 
 const getResult = () => {
-  const a1 = getRandomNumber(minA1, maxA1);
-  const d = getRandomNumber(minD, maxD);
+  const firstMember = getRandomNumber(minFirstMember, maxFirstMember);
+  const diff = getRandomNumber(minDiff, maxDiff);
   const members = [];
   for (let i = 0; i < maxSize; i += 1) {
-    members[i] = a1 + i * d;
+    members[i] = firstMember + i * diff;
   }
   const changedMembAndNewMass = hideANumber(members);
 
