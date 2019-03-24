@@ -1,14 +1,16 @@
 import {
   cons, car, cdr,
 } from 'hexlet-pairs';
-import getRandomNumber from '../numberGenerator';
+import getRandomNumber from '../utils';
+
+const gameRules = 'What number is missing in the progression?';
 
 const min = 0;
-const maxSizeOfProg = 10; // max size of progression;
+const maxSize = 10;
 
-const changeMembAndMass = (mass) => {
+const hideANumber = (mass) => {
   const elseMass = mass.slice(0);
-  const changeMemb = getRandomNumber(min, maxSizeOfProg);
+  const changeMemb = getRandomNumber(min, maxSize);
   elseMass[changeMemb] = '..';
   return cons(changeMemb, elseMass);
 };
@@ -17,21 +19,22 @@ const minA1 = 0;
 const maxA1 = 30;
 const minD = 0;
 const maxD = 30;
-const numbOfMembers = 10;
 
-const createProgression = () => {
+
+const getResult = () => {
   const a1 = getRandomNumber(minA1, maxA1);
   const d = getRandomNumber(minD, maxD);
   const members = [];
-  for (let i = 0; i < numbOfMembers; i += 1) {
+  for (let i = 0; i < maxSize; i += 1) {
     members[i] = a1 + i * d;
   }
-  const changedMembAndNewMass = changeMembAndMass(members);
+  const changedMembAndNewMass = hideANumber(members);
 
-  const member = members[car(changedMembAndNewMass)];
-  const newMembers = cdr(changedMembAndNewMass).join(' ');
+  const result = members[car(changedMembAndNewMass)];
+  const question = cdr(changedMembAndNewMass).join(' ');
 
-  return cons(newMembers, member);
+  const finalResult = cons(question, result);
+  return cons(finalResult, gameRules);
 };
 
-export default createProgression;
+export default getResult;

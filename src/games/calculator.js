@@ -1,7 +1,9 @@
 import {
   cons,
 } from 'hexlet-pairs';
-import getRandomNumber from '../numberGenerator';
+import getRandomNumber from '../utils';
+
+const gameRules = 'What is the result of the expression?.';
 
 const operands = '+-*';
 
@@ -35,8 +37,10 @@ const calc = () => {
   const randomOperand = getRandomOperand();
 
   const result = getResult(number1, number2, randomOperand);
-  const expression = `${number1} ${randomOperand} ${number2}`;
-  return cons(expression, result);
+  const question = `${number1} ${randomOperand} ${number2}`;
+
+  const finalResult = cons(question, result);
+  return cons(finalResult, gameRules);
 };
 
 export default calc;

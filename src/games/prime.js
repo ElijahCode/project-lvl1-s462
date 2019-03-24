@@ -1,9 +1,11 @@
 import {
   cons,
 } from 'hexlet-pairs';
-import getRandomNumber from '../numberGenerator';
+import getRandomNumber from '../utils';
 
-const numbIsPrime = (numb) => {
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const isPrime = (numb) => {
   const iter = (number, acc) => {
     if (number === acc) {
       return true;
@@ -19,11 +21,12 @@ const numbIsPrime = (numb) => {
 const min = 1;
 const max = 22;
 
-const game = () => {
-  const randomNumb = getRandomNumber(min, max);
-  const answer = numbIsPrime(randomNumb);
-  const result = (answer === true) ? 'yes' : 'no';
-  return cons(randomNumb, result);
+const getResult = () => {
+  const question = getRandomNumber(min, max);
+  const result = (isPrime(question) === true) ? 'yes' : 'no';
+
+  const finalResult = cons(question, result);
+  return cons(finalResult, gameRules);
 };
 
-export default game;
+export default getResult;
