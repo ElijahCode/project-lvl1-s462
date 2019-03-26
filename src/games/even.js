@@ -15,9 +15,7 @@ const getResult = () => {
   const question = getRandomNumber(min, max);
   const answer = isEven(question) ? 'yes' : 'no';
 
-  const questionAndAnswer = cons(question, answer);
-
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 const runGame = () => engine(getResult, gameDescription);
 export default runGame;

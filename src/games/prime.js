@@ -26,8 +26,7 @@ const getResult = () => {
   const question = getRandomNumber(min, max);
   const answer = isPrime(question) === true ? 'yes' : 'no';
 
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 
 const runGame = () => engine(getResult, gameDescription);

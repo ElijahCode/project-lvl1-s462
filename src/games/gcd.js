@@ -26,8 +26,7 @@ const getResult = () => {
   const answer = String(findGCD(number1, number2));
   const question = `${number1} ${number2}`;
 
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 
 const runGame = () => engine(getResult, gameDescription);

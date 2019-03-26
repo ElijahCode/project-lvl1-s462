@@ -21,15 +21,14 @@ const getQuestionAndAnswer = () => {
   for (let i = 0; i < length; i += 1) {
     members[i] = firstMember + i * diff;
   }
-  const hiddenNumber = getRandomNumber(firstMemberIndex, length);
+  const hiddenNumber = getRandomNumber(firstMemberIndex, length - 1);
   const answer = String(members[hiddenNumber]);
 
   members[hiddenNumber] = '..';
 
   const question = members.join(' ');
 
-  const questionAndAnswer = cons(question, answer);
-  return questionAndAnswer;
+  return cons(question, answer);
 };
 
 const runGame = () => engine(getQuestionAndAnswer, gameDescription);
